@@ -8,7 +8,6 @@
 //Студент Петрова получил 4 по предмету Информатика.
 //Студент Краснов получил 5 по предмету Физика.
 
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Arrays;
@@ -23,7 +22,7 @@ public class Task3 {
         byte[] string = new byte[inFile.available()];
         inFile.read(string);
         String newText = new String(string);
-
+        inFile.close();
         String str = newText.replace("{", "").replace("}", "").replace("\"", "");
         String[] str2 = str.split(", ");
         System.out.println(Arrays.toString(str2));
@@ -32,9 +31,9 @@ public class Task3 {
 
         for (String item : str2) {
             String[] strNew = item.split(", ");
-            for(String item2: strNew) {
+            for (String item2 : strNew) {
                 String[] strNew2 = item2.split(",");
-                for(String item3: strNew2) {
+                for (String item3 : strNew2) {
                     String[] strNew3 = item3.split(":");
                     dictionary.put(strNew3[0], strNew3[1]);
                 }
@@ -46,4 +45,3 @@ public class Task3 {
         }
     }
 }
-

@@ -23,7 +23,7 @@ public class Task3 {
         byte[] string = new byte[inFile.available()];
         inFile.read(string);
         String newText = new String(string);
-
+        inFile.close();
         String str = newText.replace("{", "").replace("}", "").replace("\"", "");
         String[] str2 = str.split(", ");
         System.out.println(Arrays.toString(str2));

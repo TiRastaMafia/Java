@@ -14,7 +14,7 @@ public class Task1 {
     public static void main(String[] args) {
         try (FileWriter writer = new FileWriter("Task1.txt")) {
 
-            //to write into the file
+            // to write into the file
             String text = "{\"name\":\"Ivanov\", \"country\":\"Russia\", \"city\":\"Moscow\", \"age\":\"null\"}";
             writer.write(text);
             writer.flush();
@@ -40,16 +40,16 @@ public class Task1 {
             StringBuilder builder = new StringBuilder();
             builder.append(new1);
 
-            if (dictionary.get("name") != null)  {
+            if (dictionary.get("name") != null) {
                 builder.append(" name = " + dictionary.get("name"));
             }
-            if (dictionary.get("country") != null)  {
+            if (dictionary.get("country") != null) {
                 builder.append(" AND country = " + dictionary.get("country"));
             }
             if (dictionary.get("city") != null) {
                 builder.append(" AND city = " + dictionary.get("city"));
             }
-            if (!(dictionary.get("age") != "null")){
+            if (!(dictionary.get("age") != "null")) {
                 builder.append(" AND age = " + dictionary.get("age"));
             }
 

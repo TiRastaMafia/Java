@@ -1,5 +1,5 @@
 public class Coffee extends Drinks {
-    // если нужны доп переменные то она будут private
+    // если нужны доп переменные то они будут private
 
 
     public Coffee(String name,  String type, int volume, int temperature) {

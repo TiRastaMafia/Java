@@ -11,7 +11,6 @@ public class Drinks {
         this.volume = volume;
         this.temperature = temperature;
     }
-
     @Override
     public String toString() {
         // TODO Auto-generated method stub

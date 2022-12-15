@@ -7,7 +7,6 @@ public class Tea extends Drinks {
     public Tea(String name,  String type, String taste, int volume, int temperature) {
         super(name, type, volume, temperature);
         this.taste = taste; 
-            
     }
 
     @Override

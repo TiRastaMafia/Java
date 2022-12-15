@@ -4,7 +4,6 @@ public class HotChocolate extends Drinks {
 
     public HotChocolate(String name,  String type, int volume, int temperature) {
         super(name, type, volume, temperature);
-            
     }
 
     @Override

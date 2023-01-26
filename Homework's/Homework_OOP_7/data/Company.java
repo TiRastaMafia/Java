@@ -13,19 +13,20 @@ public class Company extends ContactMain {
         return occupation;
     }
 
-    public Company(String name, String companyName, String occupation) {
-        super(name);
+    public Company(String name, String address, String key, String value, String companyName, String occupation) {
+        super(name, address, key, value);
         this.companyName = companyName;
         this.occupation = occupation;
     }
 
     @Override
     public String toString() {
-        return "Company [name = " + super.name + ", company name = " 
-        + companyName + ", occupation = "  
-        + occupation + "CommunicationMethod" + ", " + super.communicationMethods + "]";
+        return "Company: [" +
+                "Company Name: " + companyName + ", " +
+                "Occupation: " + occupation + ", " +
+                "Name: " + name + ", " +
+                 communicationMethods + ", " +
+                "Address: " + address +
+                ']';
     }
- 
-
-
 }

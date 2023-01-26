@@ -1,10 +1,9 @@
 
-import ui.App;
 
+import ui.App;
 
 public class Main {
     public static void main(String[] args) {
-   
         App.buttonClick();
     }
 }

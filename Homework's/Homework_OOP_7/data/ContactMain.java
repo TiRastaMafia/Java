@@ -9,10 +9,14 @@ public class ContactMain {
     protected Map<String, String> communicationMethods;
     protected String address;
 
-    public ContactMain(String name) {
+    public ContactMain(String name, String address, String key, String value) {
         this.name = name;
+        this.address = address;
         this.communicationMethods = new HashMap<>();
+        communicationMethods.put(key, value);
+
     }
+
 
     public Map<String, String> getCommunicationMethods() {
         return communicationMethods;
@@ -24,18 +28,14 @@ public class ContactMain {
 
     @Override
     public String toString() {
-        return "ContactMain [name=" + name 
-        + ", communicationMethods=" 
-        + communicationMethods 
-        + ", address=" 
-        + address
-        + "]";
+        return "Contact [" +
+                "Name: " + name + ", " +
+                "Address: " + address + ", " +
+                communicationMethods +
+                ']';
     }
 
     public String getName() {
         return name;
     }
-
-
-
 }

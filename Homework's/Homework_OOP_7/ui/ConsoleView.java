@@ -1,18 +1,40 @@
 package ui;
 
+import data.ContactMain;
+
+
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-import data.ContactMain;
-
-public class ConsoleView implements View {
+public class ConsoleView implements View{
 
     Scanner in;
 
     public ConsoleView() {
-        in = new Scanner(System.in);
+        in = new Scanner(System.in).useDelimiter("\n");
     }
+
+    @Override
+    public String getName() {
+        System.out.println("Name: ");
+        return in.next();
+    }
+
+    @Override
+    public String setName() {
+        System.out.println("Name: ");
+        String temp = "";
+        temp += in.next();
+        return temp;
+    }
+
+    @Override
+    public Map<String, String> getCommunicationMethods() {
+        System.out.println("CommunicationMethod + data: ");
+        return null;
+    }
+
 
     @Override
     public String getAddress() {
@@ -21,20 +43,22 @@ public class ConsoleView implements View {
     }
 
     @Override
-    public Map<String, String> getCommunicationMethods() {
-        System.out.println("CommunicationMethods: ");
-        return null;
+    public String setAddress() {
+        System.out.println("Address: ");
+        String temp = "";
+        temp += in.next();
+        return temp;
     }
 
     @Override
     public String getCompanyName() {
-        System.out.println("CompanyName: ");
-        return null;
+        System.out.println("Company name: ");
+        return in.nextLine();
     }
 
     @Override
-    public String getName() {
-        System.out.println("Name");
+    public String setCompanyName() {
+        System.out.println("Company name: ");
         return in.next();
     }
 
@@ -45,56 +69,32 @@ public class ConsoleView implements View {
     }
 
     @Override
-    public void setAddress() {
-        System.out.println("Address");
-        // in.nextLine();
-
-    }
-
-    @Override
-    public String setCompanyName() {
-        System.out.println("Company Name:");
-        return in.next();
-
-    }
-
-    @Override
-    public String setName() {
-        System.out.println("Name:");
-        return in.next();
-
-    }
-
-    @Override
-    public String setKey() {
-        System.out.println("Способ связи: ");
-        return in.next();
-
-    }
-
-    @Override
-    public String setValue() {
-        System.out.println("Контакт: ");
-        return in.next();
-
-    }
-
-    @Override
     public String setOccupation() {
-        System.out.println("Должность");
+        System.out.println("Occupation: ");
         return in.next();
-
     }
 
-    public void printMetod(List<ContactMain> cMain) {
-        for (ContactMain item : cMain) {
+    public void printView(List<ContactMain> lst) {
+        for(ContactMain item: lst) {
             System.out.println(item);
         }
     }
 
     public Integer getIndex() {
-        System.out.println("Выберете контакт");
+        System.out.println("Chose the contact: ");
         return in.nextInt() - 1;
     }
 
-};
+
+    @Override
+    public String setKey() {
+        System.out.println("Enter the method: ");
+        return in.next();
+    }
+
+    @Override
+    public String setValue() {
+        System.out.println("Enter the number: ");
+        return in.next();
+    }
+}

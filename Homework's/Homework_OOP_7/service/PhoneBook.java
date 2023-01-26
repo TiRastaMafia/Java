@@ -1,12 +1,11 @@
 package service;
 
 
-import java.util.LinkedList;
-
-
 import data.ContactMain;
 
-public class PhoneBook {
+import java.util.LinkedList;
+
+public class PhoneBook{
 
     private LinkedList<ContactMain> lst;
 
@@ -18,14 +17,14 @@ public class PhoneBook {
         return lst;
     }
 
+
     @Override
     public String toString() {
-        String result = "";
-        for(ContactMain elem: lst){
-        result = result + elem + "\n"; 
+        String res = "";
+        for (Object elem : lst) {
+            res = res + elem + "\n";
         }
-        return result;
-    };
-
+           return res;
+    }
 
 }
